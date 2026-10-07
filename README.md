@@ -18,6 +18,17 @@ A basic MS Paint-like Computer Graphics project made with HTML5 Canvas, CSS, and
 
 Open `index.html` in any modern web browser. No installation or internet connection is required.
 
+## How to create the Windows `.exe`
+
+Install Node.js, then run these commands from the project folder:
+
+```bash
+npm install
+npm run build
+```
+
+The installer will be created inside the `dist` folder. Run `CG Paint Studio Setup 1.0.0.exe` to install the application on Windows.
+
 ## Keyboard shortcuts
 
 `P` Pencil, `L` Line, `R` Rectangle, `C` Circle, `T` Triangle, `X` Text, `E` Eraser, `Ctrl + Z` Undo, `Ctrl + Y` Redo.

@@ -1,0 +1,3 @@
+node_modules/
+dist/*
+!dist/CG Paint Studio Setup 1.0.0.exe
