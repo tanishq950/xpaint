@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CG Paint Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Computer Graphics Project</p>
+        <h1>CG Paint Studio</h1>
+      </div>
+      <span class="status" id="statusMessage">Ready to draw</span>
+    </header>
+
+    <section class="toolbar" aria-label="Paint tools">
+      <div class="tool-group">
+        <span class="group-label">Tools</span>
+        <button class="tool-button active" data-tool="pencil" title="Freehand pencil (P)" aria-label="Pencil">✎</button>
+        <button class="tool-button" data-tool="line" title="Line (L)" aria-label="Line">╱</button>
+        <button class="tool-button" data-tool="rectangle" title="Rectangle (R)" aria-label="Rectangle">▱</button>
+        <button class="tool-button" data-tool="circle" title="Circle (C)" aria-label="Circle">◯</button>
+        <button class="tool-button" data-tool="triangle" title="Triangle (T)" aria-label="Triangle">△</button>
+        <button class="tool-button" data-tool="text" title="Text (X)" aria-label="Text">T</button>
+        <button class="tool-button" data-tool="eraser" title="Eraser (E)" aria-label="Eraser">⌫</button>
+      </div>
+
+      <div class="tool-group">
+        <span class="group-label">Color</span>
+        <label class="color-picker" title="Choose drawing color">
+          <input type="color" id="colorPicker" value="#2563eb">
+          <span id="colorPreview"></span>
+        </label>
+        <div class="swatches" aria-label="Color presets">
+          <button class="swatch" data-color="#111827" style="--swatch:#111827" aria-label="Black"></button>
+          <button class="swatch" data-color="#ef4444" style="--swatch:#ef4444" aria-label="Red"></button>
+          <button class="swatch" data-color="#f59e0b" style="--swatch:#f59e0b" aria-label="Orange"></button>
+          <button class="swatch" data-color="#22c55e" style="--swatch:#22c55e" aria-label="Green"></button>
+          <button class="swatch" data-color="#2563eb" style="--swatch:#2563eb" aria-label="Blue"></button>
+          <button class="swatch" data-color="#a855f7" style="--swatch:#a855f7" aria-label="Purple"></button>
+          <button class="swatch" data-color="#ffffff" style="--swatch:#ffffff" aria-label="White"></button>
+        </div>
+      </div>
+
+      <div class="tool-group settings-group">
+        <label for="sizeRange" class="group-label">Size <output id="sizeValue">5 px</output></label>
+        <input type="range" id="sizeRange" min="1" max="40" value="5">
+        <label for="fillToggle" class="check-control">
+          <input type="checkbox" id="fillToggle">
+          Fill shapes
+        </label>
+      </div>
+
+      <div class="tool-group action-group">
+        <button class="action-button" id="undoButton" title="Undo (Ctrl+Z)">↶ <span>Undo</span></button>
+        <button class="action-button" id="redoButton" title="Redo (Ctrl+Y)">↷ <span>Redo</span></button>
+        <button class="action-button danger" id="clearButton">Clear</button>
+        <button class="action-button primary" id="saveButton">Save PNG</button>
+      </div>
+    </section>
+
+    <section class="canvas-area">
+      <div class="canvas-frame">
+        <canvas id="paintCanvas" aria-label="Drawing canvas"></canvas>
+      </div>
+      <p class="hint">Tip: Use <kbd>Ctrl</kbd> + <kbd>Z</kbd> to undo and <kbd>Ctrl</kbd> + <kbd>Y</kbd> to redo. Select Text, then click the canvas.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
